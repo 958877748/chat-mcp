@@ -20,14 +20,14 @@ jobs:
         run: npm install
 
       - name: Build the app
-        run: npm run build # 或者你的构建命令
+        run: npm run build # 使用已有的构建命令
 
       - name: Package the app
-        run: npm run package # 或者你的打包命令
+        run: npm run build-app # 使用 build-app 脚本进行打包
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          files: path/to/your/package.exe # 替换为打包后生成的文件路径
+          files: artifacts/**/* # 上传 artifacts 目录下的所有文件
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
