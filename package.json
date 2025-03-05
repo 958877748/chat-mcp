@@ -14,6 +14,7 @@
         "build-app": "npm run build && electron-builder"
     },
     "build": {
+        "publish": null,
         "appId": "com.aiql.chat-mcp",
         "directories": {
             "output": "artifacts"
