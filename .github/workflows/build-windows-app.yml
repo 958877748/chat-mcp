@@ -26,7 +26,7 @@ jobs:
         run: npm run build-app # 使用 build-app 脚本进行打包
 
       - name: Upload Release Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: aiql-desktop-artifacts
           path: artifacts/**/* # 上传 artifacts 目录下的所有文件
