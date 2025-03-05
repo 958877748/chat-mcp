@@ -25,9 +25,9 @@ jobs:
       - name: Package the app
         run: npm run build-app # 使用 build-app 脚本进行打包
 
-      - name: Upload Release
-        uses: softprops/action-gh-release@v1
+      - name: Upload Release Artifacts
+        uses: actions/upload-artifact@v2
         with:
-          files: artifacts/**/* # 上传 artifacts 目录下的所有文件
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: aiql-desktop-artifacts
+          path: artifacts/**/* # 上传 artifacts 目录下的所有文件
+          retention-days: 3 # 保留 3 天
